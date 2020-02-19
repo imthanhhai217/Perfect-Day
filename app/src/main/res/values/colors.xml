@@ -5,4 +5,9 @@
     <color name="colorAccent">#D81B60</color>
     <color name="border">#4DFFFFFF</color>
     <color name="textColor">#CCFFFFFF</color>
+    <color name="textColorDark">#CC2C2C2C</color>
+    <color name="lightGreen">#B5FFEB3C</color>
+    <color name="amber">#CCFFC63C</color>
+    <color name="teal">#CCFFFFFF</color>
+    <color name="transparent">#00000000</color>
 </resources>

@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:background="#BBDEFB"
+    android:fillViewport="true"
+    android:paddingBottom="@dimen/_20sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/_10sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvCityName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Hà Nội"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/_25sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></TextView>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/v1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.1"></androidx.constraintlayout.widget.Guideline>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/v2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.2"></androidx.constraintlayout.widget.Guideline>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/v3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.3"></androidx.constraintlayout.widget.Guideline>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/v4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.4"></androidx.constraintlayout.widget.Guideline>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/v5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.5"></androidx.constraintlayout.widget.Guideline>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/v6"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.6"></androidx.constraintlayout.widget.Guideline>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/v7"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.7"></androidx.constraintlayout.widget.Guideline>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/v8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.8"></androidx.constraintlayout.widget.Guideline>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/v9"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.9"></androidx.constraintlayout.widget.Guideline>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/h1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.1"></androidx.constraintlayout.widget.Guideline>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/h2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.2"></androidx.constraintlayout.widget.Guideline>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/h3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.3"></androidx.constraintlayout.widget.Guideline>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/h4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.4"></androidx.constraintlayout.widget.Guideline>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/h5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5"></androidx.constraintlayout.widget.Guideline>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/h6"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.6"></androidx.constraintlayout.widget.Guideline>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/h7"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.7"></androidx.constraintlayout.widget.Guideline>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/h8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.8"></androidx.constraintlayout.widget.Guideline>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/h9"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.9"></androidx.constraintlayout.widget.Guideline>
+
+            <TextView
+                android:id="@+id/tvTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="15"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/_60sdp"
+                app:layout_constraintBottom_toTopOf="@id/v3"
+                app:layout_constraintEnd_toStartOf="@id/h4"
+                app:layout_constraintStart_toStartOf="@id/h1"
+                app:layout_constraintTop_toBottomOf="@id/v1"></TextView>
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trời có mây"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintEnd_toStartOf="@id/h4"
+                app:layout_constraintStart_toEndOf="@id/h1"
+                app:layout_constraintTop_toBottomOf="@id/v3"></TextView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@drawable/bg_frag_home"
+            android:padding="@dimen/_5sdp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/midLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5"></androidx.constraintlayout.widget.Guideline>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="@color/border"
+                app:layout_constraintBottom_toBottomOf="@id/row2"
+                app:layout_constraintStart_toStartOf="@id/midLine"
+                app:layout_constraintTop_toTopOf="@id/row1"></View>
+
+            <TextView
+                android:id="@+id/tvDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:text="Chi tiết"
+                android:textColor="@color/textColor"
+                app:layout_constraintBottom_toTopOf="@id/row1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></TextView>
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@color/border"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDetails"></View>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/row1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:padding="@dimen/_5sdp"
+                android:weightSum="2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line1">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/h111"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.25"></androidx.constraintlayout.widget.Guideline>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/h211"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5"></androidx.constraintlayout.widget.Guideline>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/h311"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.75"></androidx.constraintlayout.widget.Guideline>
+
+
+                <TextView
+                    android:id="@+id/tt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tốc độ gió"
+                    android:textColor="@color/textColor"
+                    app:layout_constraintEnd_toStartOf="@id/h111"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></TextView>
+
+                <TextView
+                    android:id="@+id/tvSpeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20 km/h"
+                    android:textColor="@color/textColor"
+                    app:layout_constraintEnd_toStartOf="@id/h111"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tt1"></TextView>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7"
+                    android:src="@drawable/icon_windy"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/h211"
+                    app:layout_constraintStart_toStartOf="@id/h111"
+                    app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+                <TextView
+                    android:id="@+id/tt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cảm thấy"
+                    android:textColor="@color/textColor"
+                    app:layout_constraintEnd_toStartOf="@id/h311"
+                    app:layout_constraintStart_toEndOf="@id/h211"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/tvFeelsLike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="15"
+                    android:textColor="@color/textColor"
+                    app:layout_constraintEnd_toStartOf="@id/h311"
+                    app:layout_constraintStart_toEndOf="@id/h211"
+                    app:layout_constraintTop_toBottomOf="@id/tt2"></TextView>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7"
+                    android:src="@drawable/icon_temperature"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/h311"
+                    app:layout_constraintTop_toTopOf="parent">
+                    >
+                </ImageView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/border"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/row1"></View>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/row2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:padding="@dimen/_5sdp"
+                android:weightSum="2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/row1">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/h12"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.25"></androidx.constraintlayout.widget.Guideline>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/h22"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5"></androidx.constraintlayout.widget.Guideline>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/h32"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.75"></androidx.constraintlayout.widget.Guideline>
+
+
+                <TextView
+                    android:id="@+id/tt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Độ ẩm"
+                    android:textColor="@color/textColor"
+                    app:layout_constraintEnd_toStartOf="@id/h12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></TextView>
+
+                <TextView
+                    android:id="@+id/tvHumidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textColor="@color/textColor"
+                    app:layout_constraintEnd_toStartOf="@id/h12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tt3"></TextView>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7"
+                    android:src="@drawable/icon_humidity"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/h22"
+                    app:layout_constraintStart_toStartOf="@id/h12"
+                    app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+                <TextView
+                    android:id="@+id/tt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Áp suất"
+                    android:textColor="@color/textColor"
+                    app:layout_constraintEnd_toStartOf="@id/h32"
+                    app:layout_constraintStart_toEndOf="@id/h22"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/tvPressure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="15"
+                    android:textColor="@color/textColor"
+                    app:layout_constraintEnd_toStartOf="@id/h32"
+                    app:layout_constraintStart_toEndOf="@id/h22"
+                    app:layout_constraintTop_toBottomOf="@id/tt4"></TextView>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7"
+                    android:src="@drawable/icon_pressure"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/h32"
+                    app:layout_constraintTop_toTopOf="parent">
+                    >
+                </ImageView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@drawable/bg_frag_home"
+            android:padding="@dimen/_5sdp">
+
+            <com.github.tianma8023.ssv.SunriseSunsetView
+                android:id="@+id/ssv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleY="0.6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:ssv_label_horizontal_offset="@dimen/_20sdp"
+                app:ssv_label_text_color="@color/colorAccent"
+                app:ssv_label_text_size="0dp"
+                app:ssv_label_vertical_offset="@dimen/_20sdp"
+                app:ssv_shadow_color="@color/border"
+                app:ssv_sun_color="@color/amber"
+                app:ssv_sun_radius="@dimen/_10sdp"
+                app:ssv_track_color="@color/teal"
+                app:ssv_track_width="2dp"></com.github.tianma8023.ssv.SunriseSunsetView>
+
+            <TextView
+                android:id="@+id/tvSR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:text="Bình minh"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintBottom_toBottomOf="@id/ssv"
+                app:layout_constraintStart_toStartOf="parent"></TextView>
+
+            <TextView
+                android:id="@+id/tvSS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:text="Hoàng hôn"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintBottom_toBottomOf="@id/ssv"
+                app:layout_constraintEnd_toEndOf="parent"></TextView>
+
+            <TextView
+                android:id="@+id/tvSunrise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="07:27"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintEnd_toEndOf="@id/tvSR"
+                app:layout_constraintStart_toStartOf="@id/ssv"
+                app:layout_constraintTop_toBottomOf="@id/tvSR"></TextView>
+
+            <TextView
+                android:id="@+id/tvSunset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="17:27"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintEnd_toEndOf="@id/ssv"
+                app:layout_constraintTop_toBottomOf="@id/tvSR"></TextView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvFiveDays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/bg_frag_home"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="Xem thêm..."
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/_20sdp"></TextView>
+    </LinearLayout>
+</ScrollView>

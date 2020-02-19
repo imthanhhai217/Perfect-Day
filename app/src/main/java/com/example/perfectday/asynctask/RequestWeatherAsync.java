@@ -34,13 +34,12 @@ public class RequestWeatherAsync extends AsyncTask<String, Void, CurrentWeather>
     @Override
     protected CurrentWeather doInBackground(String... strings) {
         Log.d(TAG, "doInBackground: ");
-        return getCurrentWeather(loadJsonString(Global.URL_TEST));
+        return getCurrentWeather(loadJsonString(strings[0]));
     }
 
     @Override
     protected void onPostExecute(CurrentWeather currentWeather) {
         super.onPostExecute(currentWeather);
-//        callBack.getCurrentWeather(currentWeather);
     }
 
     public String loadJsonString(String url) {
@@ -130,8 +129,8 @@ public class RequestWeatherAsync extends AsyncTask<String, Void, CurrentWeather>
         try {
             JSONObject jsonObject = new JSONObject(jsonWeather);
             JSONObject windJS = jsonObject.getJSONObject("wind");
-            wind.setDeg(windJS.getString("deg"));
             wind.setSpeed(windJS.getString("speed"));
+            wind.setDeg(windJS.getString("deg"));
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -142,7 +141,7 @@ public class RequestWeatherAsync extends AsyncTask<String, Void, CurrentWeather>
         Clouds clouds = new Clouds();
         try {
             JSONObject jsonObject = new JSONObject(jsonWeather);
-            JSONObject cloudsJS = jsonObject.getJSONObject("wind");
+            JSONObject cloudsJS = jsonObject.getJSONObject("clouds");
             clouds.setAll(cloudsJS.getInt("all"));
         } catch (JSONException e) {
             e.printStackTrace();
@@ -155,11 +154,12 @@ public class RequestWeatherAsync extends AsyncTask<String, Void, CurrentWeather>
         try {
             JSONObject jsonObject = new JSONObject(jsonWeather);
             JSONObject sysJS = jsonObject.getJSONObject("sys");
-            sys.setType(sysJS.getInt("type"));
-            sys.setId(sysJS.getInt("id"));
             sys.setCountry(sysJS.getString("country"));
             sys.setSunrise(sysJS.getInt("sunrise"));
             sys.setSunset(sysJS.getInt("sunset"));
+            sys.setId(sysJS.getInt("id"));
+            sys.setType(sysJS.getString("type"));
+            Log.d(TAG, "getSys: type : "+sys.getType());
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -171,6 +171,7 @@ public class RequestWeatherAsync extends AsyncTask<String, Void, CurrentWeather>
         try {
             JSONObject jsonObject = new JSONObject(jsonWeather);
             res = jsonObject.getString("name");
+            Log.d(TAG, "getName: res : " + res);
         } catch (JSONException e) {
             e.printStackTrace();
             res = "N/A";

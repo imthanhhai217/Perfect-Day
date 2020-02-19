@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E9000000">
+
+    <ImageView
+        android:id="@+id/imgBackHome"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintBottom_toTopOf="@id/v1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+    <AutoCompleteTextView
+        android:id="@+id/edtSearch"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/transparent"
+        android:gravity="center"
+        android:hint="Nhập tên thành phố"
+        android:padding="@dimen/_5sdp"
+        android:textColor="#FFF"
+        android:textColorHint="#FFF"
+        android:textSize="@dimen/_15sdp"
+        app:layout_constraintBottom_toTopOf="@id/v1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imgBackHome"
+        app:layout_constraintTop_toTopOf="parent"></AutoCompleteTextView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1"></androidx.constraintlayout.widget.Guideline>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

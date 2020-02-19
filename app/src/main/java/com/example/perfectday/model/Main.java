@@ -3,6 +3,7 @@ package com.example.perfectday.model;
 
 import android.util.Log;
 
+import com.example.perfectday.ulti.Global;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -22,15 +23,38 @@ public class Main {
     @SerializedName("temp_max")
     @Expose
     private String tempMax;
-    @SerializedName("pressure")
+    @SerializedName("humidity")
     @Expose
     private String pressure;
     @SerializedName("humidity")
     @Expose
     private String humidity;
+    @SerializedName("seaLevel")
+    @Expose
+    private String seaLevel;
+
+    public String getGrnd_level() {
+        return grnd_level;
+    }
+
+    public void setGrnd_level(String grnd_level) {
+        this.grnd_level = grnd_level;
+    }
+
+    @SerializedName("grnd_level")
+    @Expose
+    private String grnd_level;
+
+    public String getSeaLevel() {
+        return seaLevel;
+    }
+
+    public void setSeaLevel(String seaLevel) {
+        this.seaLevel = seaLevel;
+    }
+
 
     public String getTemp() {
-        Log.d(TAG, "getTemp: " + temp);
         return temp;
     }
 
@@ -63,7 +87,7 @@ public class Main {
     }
 
     public String getPressure() {
-        return pressure;
+        return pressure + Global.PRESSURE_UNIT;
     }
 
     public void setPressure(String pressure) {

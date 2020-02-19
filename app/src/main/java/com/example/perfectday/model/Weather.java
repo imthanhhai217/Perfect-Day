@@ -19,6 +19,17 @@ public class Weather {
     @Expose
     private String icon;
 
+    private String date;
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+
     public String getId() {
         return id;
     }
@@ -40,7 +51,7 @@ public class Weather {
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        this.description = transtale(description);
     }
 
     public String getIcon() {
@@ -51,4 +62,40 @@ public class Weather {
         this.icon = icon;
     }
 
+    public String transtale(String description) {
+        String re = "";
+        switch (description.trim()) {
+            case "clear sky":
+                re = "Không mây";
+                break;
+            case "few clouds":
+                re = "ít mây";
+                break;
+            case "scattered clouds":
+                re = "Mây rải rác";
+                break;
+            case "broken clouds":
+                re = "Mây rải rác, nắng nhẹ";
+                break;
+            case "shower rain":
+                re = "Mưa nhỏ";
+                break;
+            case "rain":
+                re = "mưa";
+                break;
+            case "thunderstorm":
+                re = "Giông";
+                break;
+            case "snow":
+                re = "Tuyết rơi";
+                break;
+            case "mist":
+                re = "Sương mù";
+                break;
+            default:
+                re = description.trim();
+                break;
+        }
+        return re;
+    }
 }

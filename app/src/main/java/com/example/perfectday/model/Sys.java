@@ -26,8 +26,8 @@ public class Sys {
         return type;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setType(String type) {
+        this.type = Integer.parseInt(type);
     }
 
     public Integer getId() {
