@@ -92,6 +92,11 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.MyViewHo
             itemView.setOnClickListener(itemClickListener);
         }
 
+        public void removeItem(int position) {
+            mListHistory.remove(position);
+            notifyItemRemoved(position);
+        }
+
     }
 
 }

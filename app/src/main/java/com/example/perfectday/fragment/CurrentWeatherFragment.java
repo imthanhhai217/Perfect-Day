@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,6 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.perfectday.R;
 import com.example.perfectday.activity.FiveDaysActivity;
 import com.example.perfectday.asynctask.RequestWeatherAsync;
@@ -60,6 +63,8 @@ public class CurrentWeatherFragment extends Fragment {
     TextView tvSunset;
     @BindView(R.id.tvFiveDays)
     TextView tvFiveDays;
+    @BindView(R.id.imgLoading)
+    ImageView imgLoading;
 
     public static CurrentWeatherFragment newInstance(int position, String cityName) {
         Bundle args = new Bundle();
@@ -91,10 +96,21 @@ public class CurrentWeatherFragment extends Fragment {
 
     public void loadData(String url) {
         requestWeatherAsync = (RequestWeatherAsync) new RequestWeatherAsync() {
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                Glide.with(getContext()).asGif().load(R.drawable.loading_resize
+                ).diskCacheStrategy(DiskCacheStrategy.NONE).into(imgLoading);
+                imgLoading.setVisibility(View.VISIBLE);
+            }
+
             @Override
             protected void onPostExecute(CurrentWeather currentWeather) {
                 super.onPostExecute(currentWeather);
                 if (currentWeather.getCod() == 200) {
+                    imgLoading.setVisibility(View.GONE);
+
                     //TODO city
                     tvDescription.setText(currentWeather.getWeather().get(0).getDescription());
                     tvTemp.setText(currentWeather.getMain().getTemp() + (char) 0x00B0 + "");

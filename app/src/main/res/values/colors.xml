@@ -10,4 +10,10 @@
     <color name="amber">#CCFFC63C</color>
     <color name="teal">#CCFFFFFF</color>
     <color name="transparent">#00000000</color>
+    <color name="background_light">#FFFAFAFA</color>
+    <color name="background_deletion">#FFE5E5E5</color>
+    <color name="background_deletion_swipe">#FFF44336</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="semi_black">#87000000</color>
+    <color name="grey">#FF828282</color>
 </resources>

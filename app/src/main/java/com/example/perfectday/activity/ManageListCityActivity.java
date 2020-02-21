@@ -3,6 +3,7 @@ package com.example.perfectday.activity;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
@@ -16,8 +17,10 @@ import android.widget.Toast;
 import com.example.perfectday.R;
 import com.example.perfectday.adapter.HistoryAdapter;
 import com.example.perfectday.asynctask.RequestWeatherAsync;
+import com.example.perfectday.database.HistoryDatabase;
 import com.example.perfectday.model.CurrentWeather;
 import com.example.perfectday.model.HistoryModel;
+import com.example.perfectday.ulti.DeletionSwipeHelper;
 import com.example.perfectday.ulti.Global;
 
 import java.util.ArrayList;
@@ -25,7 +28,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ManageListCityActivity extends AppCompatActivity {
+public class ManageListCityActivity extends AppCompatActivity implements DeletionSwipeHelper.OnSwipeListener {
 
     private static final String TAG = "ManageListCityActivity";
 
@@ -100,14 +103,6 @@ public class ManageListCityActivity extends AppCompatActivity {
         }
     }
 
-    public void getResponse(HistoryModel historyModel) {
-        mListHistory.add(historyModel);
-        mHistoryAdapter = new HistoryAdapter(mListHistory, this);
-        rvListCity.setAdapter(mHistoryAdapter);
-        mHistoryAdapter.notifyDataSetChanged();
-        mHistoryAdapter.setItemClickListener(vOnClickListener);
-    }
-
     ManageListCityActivity manageListCityActivity = this;
 
     public HistoryModel loadDataByCityName(String cityName) {
@@ -135,6 +130,19 @@ public class ManageListCityActivity extends AppCompatActivity {
         return model;
     }
 
+    //TODO get response
+    public void getResponse(HistoryModel historyModel) {
+        mListHistory.add(historyModel);
+        mHistoryAdapter = new HistoryAdapter(mListHistory, this);
+        rvListCity.setAdapter(mHistoryAdapter);
+        mHistoryAdapter.notifyDataSetChanged();
+        mHistoryAdapter.setItemClickListener(vOnClickListener);
+
+        ItemTouchHelper.Callback itemCallback = new DeletionSwipeHelper(0, ItemTouchHelper.START, this, this);
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(itemCallback);
+        itemTouchHelper.attachToRecyclerView(rvListCity);
+    }
+
     @Override
     public void onBackPressed() {
         setResult(Activity.RESULT_CANCELED);
@@ -151,4 +159,19 @@ public class ManageListCityActivity extends AppCompatActivity {
             }
         }
     }
+
+
+    @Override
+    public void onSwiped(RecyclerView.ViewHolder viewHolder, int position) {
+        HistoryAdapter.MyViewHolder myViewHolder = (HistoryAdapter.MyViewHolder) viewHolder;
+        myViewHolder.removeItem(position);
+        listData.remove(position);
+
+        //Update to database
+        HistoryDatabase historyDatabase = new HistoryDatabase(getApplicationContext());
+        historyDatabase.updateData(listData);
+
+        mHistoryAdapter.notifyDataSetChanged();
+    }
+
 }

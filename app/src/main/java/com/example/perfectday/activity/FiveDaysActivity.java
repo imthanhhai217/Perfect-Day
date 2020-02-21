@@ -101,21 +101,31 @@ public class FiveDaysActivity extends AppCompatActivity {
                 Log.d(TAG, "onPostExecute: " + formatDate(forecastWeather.getList().get(0).getDtTxt()));
 
                 ArrayList<Day> days = new ArrayList<>();
+                ArrayList<String> listDays = new ArrayList<>();
                 for (int i = 0; i < forecastWeather.getList().size(); i++) {
                     Day day = new Day();
                     day.setDate(formatDate(forecastWeather.getList().get(i).getDtTxt()));
+                    listDays.add(day.getDate());
                     day.setTemp(convertToDegrees((int) Double.parseDouble(forecastWeather.getList().get(i).getMain().getTemp())));
                     day.setIcon(forecastWeather.getList().get(i).getWeather().get(0).getIcon());
                     days.add(day);
                 }
 
+                ArrayList<String> miniList = new ArrayList<>();
+                for (int i = 0; i < listDays.size(); i++) {
+                    if (!miniList.contains(listDays.get(i))) {
+                        miniList.add(listDays.get(i));
+                    }
+                }
+
+                Log.d(TAG, "onPostExecute: listDay : " + listDays.size() + "| mini : " + miniList.size());
 //                loadData(days);
                 mForecastAdapter = new ForecastAdapter(days, getApplicationContext());
                 mRvListForecast.setAdapter(mForecastAdapter);
                 mRvListForecast.addItemDecoration(new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.HORIZONTAL));
                 mForecastAdapter.notifyDataSetChanged();
 
-                tvFiveDays.setText(forecastWeather.getCity().getName() + "dự báo 5 ngày/3 giờ");
+                tvFiveDays.setText(forecastWeather.getCity().getName() + " dự báo 5 ngày/3 giờ");
             }
         }.execute(Global.getForecast(lat, lon));
     }
