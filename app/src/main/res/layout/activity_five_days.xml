@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imgLoading"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_200sdp"
         android:elevation="@dimen/_20sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,13 +54,14 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5"></androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="1"></androidx.constraintlayout.widget.Guideline>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvListForecast"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/_30sdp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@id/v2"
         app:layout_constraintEnd_toEndOf="parent"

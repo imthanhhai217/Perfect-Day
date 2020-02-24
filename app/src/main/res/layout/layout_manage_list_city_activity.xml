@@ -61,6 +61,7 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                android:layoutAnimation="@anim/layout_animation"
                 app:layout_constraintTop_toBottomOf="@id/v1">
 
             </androidx.recyclerview.widget.RecyclerView>

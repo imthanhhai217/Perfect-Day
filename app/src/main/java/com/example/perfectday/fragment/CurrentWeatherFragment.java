@@ -32,6 +32,7 @@ import java.util.TimeZone;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import es.dmoral.toasty.Toasty;
 
 public class CurrentWeatherFragment extends Fragment {
 
@@ -143,7 +144,7 @@ public class CurrentWeatherFragment extends Fragment {
                     String latitude = currentWeather.getCoord().getLat();
                     getLatLong(latitude, longitude);
                 } else {
-                    Toast.makeText(getContext(), "Có lỗi khi tải dữ liệu !", Toast.LENGTH_SHORT).show();
+                    Toasty.error(getContext(), "Có lỗi khi tải dữ liệu !").show();
                 }
             }
         }.execute(url);

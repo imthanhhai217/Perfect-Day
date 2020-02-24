@@ -6,21 +6,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.inputmethodservice.Keyboard;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.perfectday.R;
 import com.example.perfectday.database.Database;
 import com.example.perfectday.model.City;
+import com.example.perfectday.ulti.FlowLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +32,7 @@ import java.util.Set;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import es.dmoral.toasty.Toasty;
 
 public class SearchActivity extends AppCompatActivity {
 
@@ -35,6 +40,8 @@ public class SearchActivity extends AppCompatActivity {
     AutoCompleteTextView edtSearch;
     @BindView(R.id.imgBackHome)
     ImageView imgBackHome;
+    @BindView(R.id.fl)
+    FlowLayout flowLayout;
     String cityName;
 
     private ArrayList<String> listData;
@@ -114,6 +121,41 @@ public class SearchActivity extends AppCompatActivity {
         for (City city : listCity) {
             cityNames.add(city.getName());
         }
+        addDataToFlowLayout();
+    }
+
+    public void addDataToFlowLayout() {
+        for (int i = 0; i < 30; i++) {
+            flowLayout.addView(createTextView(cityNames.get(i))
+                    , new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        }
+    }
+
+    public View createTextView(String text) {
+        TextView textView = new TextView(this);
+        textView.setText(text);
+        textView.setPadding(20,10,20,10);
+        textView.setTextColor(Color.parseColor("#FFFFFF"));
+        textView.setBackgroundResource(R.drawable.bg_flow);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (checkExitLocation(textView.getText().toString().trim())) {
+                    //This location is exist
+                    final Intent data = new Intent();
+                    data.putExtra("cityName", textView.getText().toString().trim());
+                    setResult(Activity.RESULT_OK, data);
+                    finish();
+                } else {
+                    //This location isn't exist
+                    final Intent data = new Intent();
+                    data.putExtra("newCity", textView.getText().toString().trim());
+                    setResult(Activity.RESULT_OK, data);
+                    finish();
+                }
+            }
+        });
+        return textView;
     }
 
     private static final String TAG = "SearchActivity";

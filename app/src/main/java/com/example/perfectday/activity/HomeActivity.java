@@ -31,6 +31,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import es.dmoral.toasty.Toasty;
 import me.relex.circleindicator.CircleIndicator;
 
 public class HomeActivity extends FragmentActivity implements ViewPager.OnPageChangeListener, GoogleApiClient.ConnectionCallbacks,
@@ -86,7 +87,7 @@ public class HomeActivity extends FragmentActivity implements ViewPager.OnPageCh
                     Global.longitude = mLastLocation.getLongitude();
                     getWeatherLocation(Global.latitude, Global.longitude);
                 } else {
-                    Toast.makeText(HomeActivity.this, "Đang lấy vị trí ...", Toast.LENGTH_SHORT).show();
+                    Toasty.warning(getBaseContext(), "Đang lấy vị trí ...").show();
                     getMyLocation();
                 }
             }
@@ -383,7 +384,7 @@ public class HomeActivity extends FragmentActivity implements ViewPager.OnPageCh
             //Chuyển trang có vị trí hiện tại lên đầu tiên
             moveCurrentLocationToFist(getIndex(currentWeather.getName()), currentWeather.getName());
         }
-        Toast.makeText(this, "Vị trí hiện tại của bạn là " + currentWeather.getName(), Toast.LENGTH_SHORT).show();
+        Toasty.success(getBaseContext(), "Vị trí hiện tại của bạn là " + currentWeather.getName()).show();
         mPagerAdapter = new CurrentWeatherAdapter(getSupportFragmentManager(), mListData, HomeActivity.this);
         mVPMain.setAdapter(mPagerAdapter);
         mPagerAdapter.notifyDataSetChanged();

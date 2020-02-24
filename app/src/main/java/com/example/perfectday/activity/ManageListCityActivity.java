@@ -27,6 +27,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import es.dmoral.toasty.Toasty;
 
 public class ManageListCityActivity extends AppCompatActivity implements DeletionSwipeHelper.OnSwipeListener {
 
@@ -123,7 +124,7 @@ public class ManageListCityActivity extends AppCompatActivity implements Deletio
                     model.setImgName(currentWeather.getWeather().get(0).getIcon());
                     manageListCityActivity.getResponse(model);
                 } else {
-                    Toast.makeText(ManageListCityActivity.this, "ERROR", Toast.LENGTH_SHORT).show();
+                    Toasty.error(getBaseContext(), "Lỗi tải dữ liệu").show();
                 }
             }
         }.execute(url);

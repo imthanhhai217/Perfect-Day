@@ -20,6 +20,7 @@ import com.bumptech.glide.load.resource.gif.GifDrawable;
 import com.bumptech.glide.request.target.ImageViewTarget;
 import com.example.perfectday.R;
 import com.example.perfectday.adapter.ForecastAdapter;
+import com.example.perfectday.adapter.ParentAdapter;
 import com.example.perfectday.asynctask.RequestForecastAsync;
 import com.example.perfectday.asynctask.RequestWeatherAsync;
 import com.example.perfectday.model.CurrentWeather;
@@ -56,6 +57,7 @@ public class FiveDaysActivity extends AppCompatActivity {
     TextView tvFiveDays;
 
     ForecastAdapter mForecastAdapter;
+    ParentAdapter mParentAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,11 +121,16 @@ public class FiveDaysActivity extends AppCompatActivity {
                 }
 
                 Log.d(TAG, "onPostExecute: listDay : " + listDays.size() + "| mini : " + miniList.size());
+                mParentAdapter = new ParentAdapter(miniList, days, getApplicationContext());
+
 //                loadData(days);
-                mForecastAdapter = new ForecastAdapter(days, getApplicationContext());
-                mRvListForecast.setAdapter(mForecastAdapter);
-                mRvListForecast.addItemDecoration(new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.HORIZONTAL));
-                mForecastAdapter.notifyDataSetChanged();
+//                mForecastAdapter = new ForecastAdapter(days, getApplicationContext());
+//                mRvListForecast.setAdapter(mForecastAdapter);
+//                mRvListForecast.addItemDecoration(new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.HORIZONTAL));
+//                mForecastAdapter.notifyDataSetChanged();
+                mRvListForecast.setAdapter(mParentAdapter);
+                mRvListForecast.addItemDecoration(new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.VERTICAL));
+                mParentAdapter.notifyDataSetChanged();
 
                 tvFiveDays.setText(forecastWeather.getCity().getName() + " dự báo 5 ngày/3 giờ");
             }

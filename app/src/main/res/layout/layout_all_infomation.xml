@@ -22,10 +22,13 @@
 
             <ImageView
                 android:id="@+id/imgLoading"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_200sdp"
                 android:elevation="@dimen/_30sdp"
-                app:layout_constraintTop_toTopOf="parent"></ImageView>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTemp"></ImageView>
 
             <TextView
                 android:id="@+id/tvCityName"
@@ -192,6 +195,7 @@
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainSum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_8sdp"
