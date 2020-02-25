@@ -5,6 +5,15 @@ public class Day {
     String date;
     String description;
     String icon;
+    String hours;
+
+    public String getHours() {
+        return hours;
+    }
+
+    public void setHours(String hours) {
+        this.hours = hours;
+    }
 
     public double getTemp() {
         return temp;
@@ -39,10 +48,12 @@ public class Day {
     }
 
 
-    public Day(int temp, String date, String description) {
+    public Day(double temp, String date, String description, String icon, String hours) {
         this.temp = temp;
         this.date = date;
         this.description = description;
+        this.icon = icon;
+        this.hours = hours;
     }
 
     public Day() {

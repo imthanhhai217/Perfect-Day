@@ -152,6 +152,9 @@ public class RequestForecastAsync extends AsyncTask<String, Void, ForecastWeathe
                 String dt_txt = object.getString("dt_txt");
                 objectList.setDtTxt(dt_txt);
 
+                int dt = object.getInt("dt");
+                objectList.setDt(dt);
+
                 list.add(objectList);
             }
         } catch (JSONException e) {

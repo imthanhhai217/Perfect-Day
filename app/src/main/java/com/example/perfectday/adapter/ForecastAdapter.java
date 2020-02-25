@@ -43,7 +43,7 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.MyView
         Day day = mDays.get(position);
         Log.d(TAG, "onBindViewHolder: forecast : " + mDays.get(position).getDate());
         holder.tvTemp.setText(day.getTemp() + Global.DEGREES);
-        holder.tvDate.setText(day.getDate());
+        holder.tvDate.setText(day.getHours());
         Glide.with(mContext).load(Global.getImageLink(day.getIcon())).into(holder.imgIcon);
     }
 

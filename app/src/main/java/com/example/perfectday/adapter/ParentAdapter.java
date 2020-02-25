@@ -97,13 +97,6 @@ public class ParentAdapter extends RecyclerView.Adapter<ParentAdapter.MyViewHold
                 expandItem.setExpand(!expandItem.isExpand());
             }
         });
-        holder.main.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toggleArrow(v, expandItem.isExpand(), expandItem, holder.rvParent);
-                expandItem.setExpand(!expandItem.isExpand());
-            }
-        });
     }
 
     public static void expandCollapse(View view) {

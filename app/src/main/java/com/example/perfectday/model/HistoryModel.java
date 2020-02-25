@@ -7,6 +7,15 @@ public class HistoryModel {
     String humidity;
     String deg;
     String speed;
+    String country;
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
 
     public String getCityName() {
         return cityName;
@@ -56,13 +65,14 @@ public class HistoryModel {
         this.speed = speed;
     }
 
-    public HistoryModel(String cityName, String imgName, String temp, String humidity, String deg, String speed) {
+    public HistoryModel(String cityName, String imgName, String temp, String humidity, String deg, String speed, String country) {
         this.cityName = cityName;
         this.imgName = imgName;
         this.temp = temp;
         this.humidity = humidity;
         this.deg = deg;
         this.speed = speed;
+        this.country = country;
     }
 
     public HistoryModel() {

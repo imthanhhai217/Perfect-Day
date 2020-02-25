@@ -100,7 +100,6 @@ public class FiveDaysActivity extends AppCompatActivity {
             protected void onPostExecute(ForecastWeather forecastWeather) {
                 super.onPostExecute(forecastWeather);
                 imgLoading.setVisibility(View.GONE);
-                Log.d(TAG, "onPostExecute: " + formatDate(forecastWeather.getList().get(0).getDtTxt()));
 
                 ArrayList<Day> days = new ArrayList<>();
                 ArrayList<String> listDays = new ArrayList<>();
@@ -108,6 +107,7 @@ public class FiveDaysActivity extends AppCompatActivity {
                     Day day = new Day();
                     day.setDate(formatDate(forecastWeather.getList().get(i).getDtTxt()));
                     listDays.add(day.getDate());
+                    day.setHours(getHours(forecastWeather.getList().get(i).getDt()));
                     day.setTemp(convertToDegrees((int) Double.parseDouble(forecastWeather.getList().get(i).getMain().getTemp())));
                     day.setIcon(forecastWeather.getList().get(i).getWeather().get(0).getIcon());
                     days.add(day);
@@ -122,7 +122,6 @@ public class FiveDaysActivity extends AppCompatActivity {
 
                 Log.d(TAG, "onPostExecute: listDay : " + listDays.size() + "| mini : " + miniList.size());
                 mParentAdapter = new ParentAdapter(miniList, days, getApplicationContext());
-
 //                loadData(days);
 //                mForecastAdapter = new ForecastAdapter(days, getApplicationContext());
 //                mRvListForecast.setAdapter(mForecastAdapter);
@@ -143,6 +142,14 @@ public class FiveDaysActivity extends AppCompatActivity {
         String day = date.substring(fist + 4, fist + 6);
         Log.d(TAG, "formatDate: " + day + "/" + month);
         return day + "/" + month;
+    }
+
+    public String getHours(long epochTime) {
+        Date date = new Date(epochTime * 1000);
+        DateFormat format = new SimpleDateFormat("HH:mm");
+        format.setTimeZone(TimeZone.getTimeZone("Asia/Saigon"));
+        String formatted = format.format(date);
+        return formatted;
     }
 
     public int convertToDegrees(int kelvin) {

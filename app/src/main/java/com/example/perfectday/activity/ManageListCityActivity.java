@@ -46,7 +46,6 @@ public class ManageListCityActivity extends AppCompatActivity implements Deletio
     HistoryAdapter mHistoryAdapter;
 
     public final int REQUEST_SEARCH_CITY = 21;
-    public final int REQUEST_SEARCH_CITY_FAILED = 22;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,6 +121,7 @@ public class ManageListCityActivity extends AppCompatActivity implements Deletio
                     model.setDeg(currentWeather.getWind().getDeg());
                     model.setSpeed(currentWeather.getWind().getSpeed());
                     model.setImgName(currentWeather.getWeather().get(0).getIcon());
+                    model.setCountry(currentWeather.getSys().getCountry());
                     manageListCityActivity.getResponse(model);
                 } else {
                     Toasty.error(getBaseContext(), "Lỗi tải dữ liệu").show();

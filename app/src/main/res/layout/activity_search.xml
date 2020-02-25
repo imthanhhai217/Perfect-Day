@@ -21,6 +21,8 @@
         android:background="@color/transparent"
         android:gravity="center"
         android:hint="Nhập tên thành phố"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
         android:padding="@dimen/_5sdp"
         android:textColor="#FFF"
         android:textColorHint="#FFF"
@@ -36,7 +38,6 @@
         android:layout_height="1dp"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.1"></androidx.constraintlayout.widget.Guideline>
-
 
     <ScrollView
         android:layout_width="match_parent"

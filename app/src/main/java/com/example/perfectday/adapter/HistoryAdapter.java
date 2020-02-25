@@ -49,7 +49,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.MyViewHo
     public void onBindViewHolder(MyViewHolder holder, int position) {
         HistoryModel model = mListHistory.get(position);
         Log.d(TAG, "onBindViewHolder: " + model.getCityName());
-        holder.tvCityName.setText(model.getCityName());
+        holder.tvCityName.setText(model.getCityName() + "\n -" + model.getCountry()+"-");
         holder.tvTemp.setText(model.getTemp() + Global.DEGREES);
         holder.tvFullWind.setText(formatWind(model.getHumidity(), model.getDeg(), model.getSpeed()));
 
