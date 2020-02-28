@@ -25,6 +25,8 @@
         android:inputType="text"
         android:padding="@dimen/_5sdp"
         android:textColor="#FFF"
+        android:maxLines="1"
+        android:maxLength="20"
         android:textColorHint="#FFF"
         android:textSize="@dimen/_15sdp"
         app:layout_constraintBottom_toTopOf="@id/v1"

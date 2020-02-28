@@ -93,7 +93,7 @@ public class ParentAdapter extends RecyclerView.Adapter<ParentAdapter.MyViewHold
         holder.imgExpand.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toggleArrow(v, expandItem.isExpand(), expandItem, holder.rvParent);
+                toggleArrow(v, expandItem.isExpand(), holder.rvParent);
                 expandItem.setExpand(!expandItem.isExpand());
             }
         });
@@ -148,18 +148,12 @@ public class ParentAdapter extends RecyclerView.Adapter<ParentAdapter.MyViewHold
 
     }
 
-    public void toggleArrow(View view, boolean isExpand, ExpandItem expandItem, RecyclerView recyclerView) {
+    public void toggleArrow(View view, boolean isExpand, RecyclerView recyclerView) {
         if (isExpand) {
-//            expandItem.setExpand(false);
             view.animate().setDuration(300).rotation(0f);
-//            recyclerView.setVisibility(View.GONE);
-//            collapse(recyclerView);
             expandCollapse(recyclerView);
         } else {
-//            expandItem.setExpand(true);
             view.animate().setDuration(300).rotation(180f);
-//            recyclerView.setVisibility(View.VISIBLE);
-//            expand(recyclerView);
             expandCollapse(recyclerView);
         }
     }
