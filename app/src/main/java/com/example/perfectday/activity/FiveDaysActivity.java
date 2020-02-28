@@ -105,22 +105,34 @@ public class FiveDaysActivity extends AppCompatActivity {
                 ArrayList<String> listDays = new ArrayList<>();
                 for (int i = 0; i < forecastWeather.getList().size(); i++) {
                     Day day = new Day();
+
+                    long epoch = forecastWeather.getList().get(i).getDt();
+                    forecastWeather.getList().get(i).setDayOfWeek(epoch);
+                    String dayOfWeek = forecastWeather.getList().get(i).getDayOfWeek();
                     day.setDate(formatDate(forecastWeather.getList().get(i).getDtTxt()));
                     listDays.add(day.getDate());
+
                     day.setHours(getHours(forecastWeather.getList().get(i).getDt()));
+
                     day.setTemp(convertToDegrees((int) Double.parseDouble(forecastWeather.getList().get(i).getMain().getTemp())));
+
                     day.setIcon(forecastWeather.getList().get(i).getWeather().get(0).getIcon());
+
+                    day.setDescription(forecastWeather.getList().get(i).getWeather().get(0).getDescription());
+
                     days.add(day);
                 }
 
                 ArrayList<String> miniList = new ArrayList<>();
+                ArrayList<String> listDaysOfWeek = new ArrayList<>();
                 for (int i = 0; i < listDays.size(); i++) {
                     if (!miniList.contains(listDays.get(i))) {
                         miniList.add(listDays.get(i));
+                        listDaysOfWeek.add(forecastWeather.getList().get(i).getDayOfWeek());
                     }
                 }
+                Log.d(TAG, "onPostExecute: dayOfWeek : " + listDaysOfWeek.get(listDaysOfWeek.size() - 1));
 
-                Log.d(TAG, "onPostExecute: listDay : " + listDays.size() + "| mini : " + miniList.size());
                 mParentAdapter = new ParentAdapter(miniList, days, getApplicationContext());
 //                loadData(days);
 //                mForecastAdapter = new ForecastAdapter(days, getApplicationContext());
@@ -147,7 +159,8 @@ public class FiveDaysActivity extends AppCompatActivity {
     public String getHours(long epochTime) {
         Date date = new Date(epochTime * 1000);
         DateFormat format = new SimpleDateFormat("HH:mm");
-        format.setTimeZone(TimeZone.getTimeZone("Asia/Saigon"));
+        Calendar calendar = Calendar.getInstance();
+        format.setTimeZone(calendar.getTimeZone());
         String formatted = format.format(date);
         return formatted;
     }
@@ -155,6 +168,42 @@ public class FiveDaysActivity extends AppCompatActivity {
     public int convertToDegrees(int kelvin) {
         Log.d(TAG, ": " + kelvin);
         return (int) (kelvin - 273.5);
+    }
+
+    public String getDateTranslate(Long date) {
+        String re = "";
+        Date d = new Date(date);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(d);
+        int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+        switch (dayOfWeek) {
+            case 1:
+                re = "Chủ nhật,";
+                break;
+            case 2:
+                re = "Thứ hai, ";
+                break;
+            case 3:
+                re = "Thứ ba, ";
+                break;
+            case 4:
+                re = "Thứ tư, ";
+                break;
+            case 5:
+                re = "Thứ năm, ";
+                break;
+            case 6:
+                re = "Thứ sáu, ";
+                break;
+            case 7:
+                re = "Thứ bảy, ";
+                break;
+            default:
+                re = "Thứ 2";
+                break;
+        }
+        calendar.clear();
+        return re;
     }
 
     @Override

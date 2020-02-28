@@ -26,7 +26,9 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
+import static android.view.View.resolveSize;
 import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class RequestForecastAsync extends AsyncTask<String, Void, ForecastWeather> {

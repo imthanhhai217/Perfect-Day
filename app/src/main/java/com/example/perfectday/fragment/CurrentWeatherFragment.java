@@ -27,6 +27,7 @@ import com.github.tianma8023.ssv.SunriseSunsetView;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
@@ -166,7 +167,8 @@ public class CurrentWeatherFragment extends Fragment {
         int re;
         Date date = new Date(epochTime * 1000);
         DateFormat format = new SimpleDateFormat("HH");
-        format.setTimeZone(TimeZone.getTimeZone("Asia/Saigon"));
+        Calendar calendar = Calendar.getInstance();
+        format.setTimeZone(calendar.getTimeZone());
         String formatted = format.format(date);
         re = Integer.parseInt(formatted);
         return re;
@@ -176,7 +178,8 @@ public class CurrentWeatherFragment extends Fragment {
         int re;
         Date date = new Date(epochTime * 1000);
         DateFormat format = new SimpleDateFormat("HH");
-        format.setTimeZone(TimeZone.getTimeZone("Asia/Saigon"));
+        Calendar calendar = Calendar.getInstance();
+        format.setTimeZone(calendar.getTimeZone());
         String formatted = format.format(date);
         re = Integer.parseInt(formatted);
         return re;
